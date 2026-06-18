@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DOM Explorer – Task Manager</title>
+
+  <meta
+    name="description"
+    content="A Vanilla JavaScript Task Manager demonstrating DOM APIs, event delegation, event propagation, and browser rendering concepts."
+  />
+
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <div>
+        <h1 class="app-title">DOM Explorer – Task Manager</h1>
+        <p class="app-subtitle">
+          Learn DOM manipulation, event delegation, event propagation, and the browser rendering pipeline.
+        </p>
+      </div>
+
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle theme"
+      >
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Dashboard Summary -->
+    <section class="stats-section" aria-label="Task statistics">
+      <article class="stat-card">
+        <h2>Total Tasks</h2>
+        <p id="totalTasks">0</p>
+      </article>
+
+      <article class="stat-card">
+        <h2>Completed</h2>
+        <p id="completedTasks">0</p>
+      </article>
+
+      <article class="stat-card">
+        <h2>Pending</h2>
+        <p id="pendingTasks">0</p>
+      </article>
+    </section>
+
+    <!-- Task Creation -->
+    <section class="card" aria-labelledby="create-task-heading">
+      <h2 id="create-task-heading">Create Task</h2>
+
+      <form id="taskForm" class="task-form">
+
+        <div class="form-group">
+          <label for="taskTitle">Task Title</label>
+
+          <input
+            type="text"
+            id="taskTitle"
+            name="taskTitle"
+            placeholder="Enter task title"
+            required
+            maxlength="100"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="taskCategory">Category</label>
+
+          <select id="taskCategory" name="taskCategory" required>
+            <option value="">Select Category</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="Study">Study</option>
+            <option value="Health">Health</option>
+            <option value="Shopping">Shopping</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Add Task
+        </button>
+
+      </form>
+    </section>
+
+    <!-- Filters -->
+    <section class="card" aria-labelledby="filters-heading">
+      <h2 id="filters-heading">Filters</h2>
+
+      <div class="filters">
+
+        <div class="form-group">
+          <label for="searchTask">Search Tasks</label>
+
+          <input
+            type="search"
+            id="searchTask"
+            placeholder="Search by title..."
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="filterCategory">Filter by Category</label>
+
+          <select id="filterCategory">
+            <option value="all">All Categories</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="Study">Study</option>
+            <option value="Health">Health</option>
+            <option value="Shopping">Shopping</option>
+          </select>
+        </div>
+
+        <button
+          id="clearTasksBtn"
+          type="button"
+          class="btn btn-danger"
+        >
+          Clear All
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Task List -->
+    <section class="card" aria-labelledby="tasks-heading">
+      <div class="section-header">
+        <h2 id="tasks-heading">Your Tasks</h2>
+      </div>
+
+      <div
+        id="taskList"
+        class="task-list"
+        aria-live="polite"
+      >
+        <!-- Dynamic task cards will be inserted here -->
+      </div>
+
+      <p id="emptyState" class="empty-state">
+        No tasks yet. Create your first task.
+      </p>
+    </section>
+
+    <!-- Attributes vs Properties -->
+    <section class="card" aria-labelledby="attributes-heading">
+      <h2 id="attributes-heading">Attributes vs Properties</h2>
+
+      <p class="section-description">
+        Type inside the input below to observe the difference between
+        <code>input.value</code> and
+        <code>input.getAttribute("value")</code>.
+      </p>
+
+      <div class="attribute-demo">
+
+        <label for="propertyInput">Demo Input</label>
+
+        <input
+          id="propertyInput"
+          type="text"
+          value="Initial Value"
+        />
+
+        <div class="demo-results">
+          <div class="result-box">
+            <h3>input.value</h3>
+            <p id="propertyValue">Initial Value</p>
+          </div>
+
+          <div class="result-box">
+            <h3>input.getAttribute("value")</h3>
+            <p id="attributeValue">Initial Value</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Event Propagation -->
+    <section class="card" aria-labelledby="propagation-heading">
+      <h2 id="propagation-heading">Event Propagation Demo</h2>
+
+      <div class="propagation-controls">
+        <button id="bubblingBtn" class="btn btn-secondary" type="button">
+          Test Bubbling
+        </button>
+
+        <button id="capturingBtn" class="btn btn-secondary" type="button">
+          Test Capturing
+        </button>
+
+        <button id="clearLogBtn" class="btn" type="button">
+          Clear Logs
+        </button>
+      </div>
+
+      <div class="propagation-demo">
+
+        <div id="grandparent" class="grandparent">
+          Grandparent
+
+          <div id="parent" class="parent">
+            Parent
+
+            <button id="childButton" class="child-button" type="button">
+              Child Button
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="event-log">
+        <h3>Event Log</h3>
+
+        <ul id="eventLog"></ul>
+      </div>
+    </section>
+
+    <!-- Browser Rendering Pipeline -->
+    <section class="card" aria-labelledby="pipeline-heading">
+  <h2 id="pipeline-heading">Browser Rendering Pipeline</h2>
+
+  <div id="renderPipeline" class="pipeline">
+
+    <article class="pipeline-card">
+      <h3>HTML</h3>
+      <p>Browser receives HTML source.</p>
+    </article>
+
+    <span class="arrow">↓</span>
+
+    <article class="pipeline-card">
+      <h3>Parsing</h3>
+      <p>HTML parser processes the document.</p>
+    </article>
+
+    <span class="arrow">↓</span>
+
+    <article class="pipeline-card">
+      <h3>Tokenization</h3>
+      <p>HTML is converted into tokens.</p>
+    </article>
+
+    <span class="arrow">↓</span>
+
+    <article class="pipeline-card">
+      <h3>DOM Tree</h3>
+      <p>Tokens become DOM nodes.</p>
+    </article>
+
+    <span class="arrow">↓</span>
+
+    <article class="pipeline-card">
+      <h3>CSS</h3>
+      <p>Stylesheets are downloaded and parsed.</p>
+    </article>
+
+    <span class="arrow">↓</span>
+
+    <article class="pipeline-card">
+      <h3>CSSOM Tree</h3>
+      <p>CSS rules become the CSS Object Model.</p>
+    </article>
+
+    <span class="arrow">↓</span>
+
+    <article class="pipeline-card">
+      <h3>DOM Tree + CSSOM Tree</h3>
+      <p>Browser combines structure and styles.</p>
+    </article>
+
+    <span class="arrow">↓</span>
+
+    <article class="pipeline-card">
+      <h3>Render Tree</h3>
+      <p>Visible elements are prepared for layout and painting.</p>
+    </article>
+
+  </div>
+</section>
+
+  </main>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/tasks.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/events.js"></script>
+  <script src="../js/render-pipeline.js"></script>
+  <script src="../js/app.js"></script>
+
+</body>
+</html>
