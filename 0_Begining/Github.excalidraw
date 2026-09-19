@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "UrwsXEXDU-hvt7ebaj8PZ",
+      "type": "text",
+      "x": 383.7109375,
+      "y": 132.109375,
+      "width": 694.7195434570312,
+      "height": 575,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a0",
+      "roundness": null,
+      "seed": 1091652307,
+      "version": 15,
+      "versionNonce": 1329929245,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1787595528149,
+      "link": null,
+      "locked": false,
+      "text": "GitHub push ke liye exact commands:\n\ngit init\ngit status\ngit add .\ngit commit -m \"initial commit\"\n\ngit branch -M main\n\ngit remote add origin https://github.com/USERNAME/REPOSITORY.git\n\ngit remote -v\n\ngit push -u origin main\n\n\n\nAgar baad mein changes kiye:\ngit status\ngit add filename.js\ngit commit -m \"updated filename\"\ngit push\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "GitHub push ke liye exact commands:\n\ngit init\ngit status\ngit add .\ngit commit -m \"initial commit\"\n\ngit branch -M main\n\ngit remote add origin https://github.com/USERNAME/REPOSITORY.git\n\ngit remote -v\n\ngit push -u origin main\n\n\n\nAgar baad mein changes kiye:\ngit status\ngit add filename.js\ngit commit -m \"updated filename\"\ngit push\n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
