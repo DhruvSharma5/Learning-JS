@@ -416,9 +416,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 249.72802869210767,
-			"y": 1440.328950700105,
-			"z": 0.17509036953487947,
+			"x": 193.24745128576086,
+			"y": 1163.6256100793003,
+			"z": 0.20708961465746265,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -579,7 +579,7 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [],
-			"hoveredShapeId": "shape:OIYxhU-bN9RVQpIP_XE46",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -1301,7 +1301,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 640.97216796875,
+				"w": 734.72216796875,
 				"h": 627.0833129882812
 			},
 			"insets": [
